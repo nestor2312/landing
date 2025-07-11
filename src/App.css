@@ -361,4 +361,26 @@ input::placeholder{
    border-radius: 6px;
   
 }
+
+.image-modal-content {
+  position: relative;
+  max-width: 110vw; /* El modal no será más ancho que el 90% del viewport */
+  max-height: 100vh; /* El modal no será más alto que el 90% del viewport */
+  background: rgba(255, 255, 255, 0.37);
+  padding: 4px; /* Un poco más de padding para que la imagen no se pegue tanto */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.image-modal-content img {
+  max-width: 100%; /* La imagen no superará el ancho de su contenedor (.image-modal-content) */
+  max-height: 100%; /* La imagen no superará el alto de su contenedor */
+  /* CLAVE para cómo se ajusta la imagen grande al espacio disponible */
+  object-fit: contain; /* Asegura que la imagen completa sea visible sin recortes, escalando si es necesario */
+  border-radius: 8px;
+ 
+}
+  }
