@@ -248,12 +248,19 @@ const App = () => {
                 <p className="color-text1 lead mb-4 text-left">
                   Lleva el control de tu torneo paso a paso: crea tus encuentros, publica resultados y motiva a tu equipo con estadísticas en tiempo real.
                 </p>
-                <a
-                  href="#contact"
-                  className="btn btn-success btn-lg btn-custom-cta" /* Ahora btn-primary usará tu verde */
-                >
-                  Solicita una demo
-                </a>
+               <a
+  href="#contact"
+  className="btn btn-success btn-lg btn-custom-cta"
+  onClick={() =>
+    window.gtag && window.gtag('event', 'click_solicita_demo', {
+      event_category: 'interaccion',
+      event_label: 'Botón Solicita Demo',
+    })
+  }
+>
+  Solicita una demo
+</a>
+
               </div>
             </div>
           </div>
@@ -424,9 +431,19 @@ const App = () => {
                           </ul>
                         </div>
                       
-                        <a href="#contact" className="btn btn-success btn-lg mt-auto btn-custom-cta">
-                          Comenzar prueba
-                        </a>
+                      <a
+  href="#contact"
+  className="btn btn-success btn-lg mt-auto btn-custom-cta"
+  onClick={() =>
+    window.gtag && window.gtag('event', 'click_comenzar_prueba', {
+      event_category: 'interaccion',
+      event_label: 'Botón Comenzar Prueba',
+    })
+  }
+>
+  Comenzar prueba
+</a>
+
                        
                         
                       </div>
