@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef  } from "react";
 import "./App.css";
 import { useForm } from "@formspree/react";
 // Si quieres dos versiones diferentes de Img1, deberías importar dos archivos:
@@ -168,6 +168,60 @@ const App = () => {
   };
 
  
+  // Referencias para los elementos que se animarán con IntersectionObserver
+  const featuresRef = useRef(null);
+  const pricingRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Estado para controlar si las secciones están en la vista
+  const [featuresInView, setFeaturesInView] = useState(false);
+  const [pricingInView, setPricingInView] = useState(false);
+  const [contactInView, setContactInView] = useState(false);
+
+  useEffect(() => {
+    // Configuración del Intersection Observer
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: '0px',
+      threshold: 0.1 // 10% del elemento visible para activar
+    };
+
+    // eslint-disable-next-line no-unused-vars
+    const observerCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target === featuresRef.current) {
+            setFeaturesInView(true);
+          } else if (entry.target === pricingRef.current) {
+            setPricingInView(true);
+          } else if (entry.target === contactRef.current) {
+            setContactInView(true);
+          }
+         
+        } else {
+         
+          if (entry.target === featuresRef.current) { setFeaturesInView(false); }
+          else if (entry.target === pricingRef.current) { setPricingInView(false); }
+          else if (entry.target === contactRef.current) { setContactInView(false); }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observar las secciones
+    if (featuresRef.current) observer.observe(featuresRef.current);
+    if (pricingRef.current) observer.observe(pricingRef.current);
+    if (contactRef.current) observer.observe(contactRef.current);
+
+    // Limpiar el observador al desmontar el componente
+    return () => {
+      if (featuresRef.current) observer.unobserve(featuresRef.current);
+      if (pricingRef.current) observer.unobserve(pricingRef.current);
+      if (contactRef.current) observer.unobserve(contactRef.current);
+    };
+  }, []);
+
 
   return (
     <>
@@ -270,24 +324,23 @@ const App = () => {
   
   
           {/* Features Section */}
-          <section className="py-3 fondo1"> {/* py-12 md:py-20 */}
-            <div className="container my-3 px-4"> {/* mx-auto px-6 */}
-              <h2 className="h2 fw-bold text-center mb-5 text-font text-white">Características Principales</h2> {/* text-3xl md:text-4xl font-bold text-center mb-10 */}
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-evenly"> {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 */}
+          <section ref={featuresRef} className="py-3 fondo1"> {/* py-12 md:py-20 */}
+          <div className="container my-3 px-4"> {/* mx-auto px-6 */}
+<h2 className={`h2 fw-bold text-center  mb-5 text-font text-white animate-fade-in-up ${featuresInView ? 'is-in-view' : ''}`}>Características Principales</h2>     
+         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-evenly"> {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 */}
                 {/* Característica 1: Programación de Partidos */}
-                <div className="col">
-                  <div className="card h-100 text-center shadow-lg p-3"> {/* bg-white p-6 rounded-lg shadow-xl my-3 flex flex-col items-center text-center */}
-                    {/* Aquí iría un <img src="/icons/calendar.svg" alt="Icono de Calendario" className="w-16 h-16 mb-4" /> */}
-                    <h3 className="h5 fw-semibold mb-2 text-font">Programación de Partidos</h3> {/* text-xl font-semibold mb-2 */}
-                    <p className="text-muted color-text2"> {/* text-gray-600 */}
-                      Crea y gestiona manualmente el calendario de encuentros de forma sencilla y organizada.
-                    </p>
-                  </div>
-                </div>
+               <div className="col hc">
+  <div className={`card h-100 text-center fond-card1 shadow-lg p-3 position-relative overflow-hidden animate-fade-in-up ${featuresInView ? 'is-in-view delay-100' : ''}`}>
+    <h3 className="h5 fw-semibold mb-2 text-font">Programación de Partidos</h3>
+    <p className="text-muted color-text2">
+      Crea y gestiona manualmente el calendario de encuentros de forma sencilla y organizada.
+    </p>
+  </div>
+</div>
   
                 {/* Característica 2: Tablas de Posición */}
-                <div className="col">
-                  <div className="card h-100 text-center shadow-lg p-3 cardWhite">
+                <div className="col hc">
+                   <div className={`card h-100 text-center fond-card2  shadow-lg p-3 position-relative overflow-hidden animate-fade-in-up ${featuresInView ? 'is-in-view delay-200' : ''}`}>
                     {/* Aquí iría un <img src="/icons/table.svg" alt="Icono de Tabla" className="w-16 h-16 mb-4" /> */}
                     <h3 className="h5 fw-semibold mb-2 text-font">Tablas de Posición</h3>
                     <p className="text-muted color-text2">
@@ -297,8 +350,8 @@ const App = () => {
                 </div>
   
                 {/* Característica 3: Estadísticas */}
-                <div className="col">
-                  <div className="card h-100 text-center shadow-lg p-3">
+                <div className="col hc">
+                   <div className={`card h-100 text-center fond-card3 shadow-lg p-3 position-relative overflow-hidden animate-fade-in-up ${featuresInView ? 'is-in-view delay-300' : ''}`}>
                     {/* Aquí iría un <img src="/icons/stats.svg" alt="Icono de Estadísticas" className="w-16 h-16 mb-4" /> */}
                     <h3 className="h5 fw-semibold mb-2 text-font">Estadísticas</h3>
                     <p className="text-muted color-text2">
@@ -308,8 +361,8 @@ const App = () => {
                 </div>
   
                 {/* Característica 4: Diseño Personalizado (¡Tu Diferenciador!) */}
-                <div className="col">
-                  <div className="card h-100 text-center shadow-lg p-3">
+                <div className="col hc">
+                  <div className={`card h-100 text-center shadow-lg p-3 animate-fade-in-up ${featuresInView ? 'is-in-view delay-400' : ''}`}>
                     {/* Aquí iría un <img src="/icons/palette.svg" alt="Icono de Paleta de Colores" className="w-16 h-16 mb-4" /> */}
                     <h3 className="h5 fw-semibold mb-2 text-font">Diseño Personalizado</h3>
                     <p className="text-muted color-text2">
@@ -319,8 +372,8 @@ const App = () => {
                 </div>
   
                 {/* Característica 5: Formularios Personalizados (¡Tu Diferenciador!) */}
-                <div className="col">
-                  <div className="card h-100 text-center shadow-lg p-3">
+                <div className="col hc">
+                  <div className={`card h-100 text-center shadow-lg p-3 animate-fade-in-up ${featuresInView ? 'is-in-view delay-500' : ''}`}>
                     {/* Aquí iría un <img src="/icons/form.svg" alt="Icono de Formulario" className="w-16 h-16 mb-4" /> */}
                     <h3 className="h5 fw-semibold mb-2 text-font">Campos y Formularios a Tu Medida</h3>
                     <p className="text-muted color-text2">
@@ -340,7 +393,8 @@ const App = () => {
      {/* Pricing Section */}
           <section id="pricing" className="py-5 ">
             <div className="container my-5 px-4 text-center">
-              <h2 className="h2 fw-bold mb-5 text-font">Planes y Precios</h2>
+                          <h2 className={`h2 fw-bold mb-5 text-font text-fubol animate-fade-in-up ${pricingInView ? 'is-in-view' : ''}`}>Planes y Precios</h2>
+
   
               {/* Selector de Moneda y Facturación */}
               <div className="d-flex justify-content-center mb-4">
@@ -455,12 +509,14 @@ const App = () => {
           </section>
   
       {/* Contact Section */}
-          <section id="contact" className="py-5 bg-light"> {/* py-20 */}
+          <section  ref={contactRef} id="contact" className="py-5 bg-light"> {/* py-20 */}
             <div className="container my-5 px-4 text-center"> {/* mx-auto px-6 */}
-              <h2 className="h2 fw-bold mb-4 text-font text-fubol">¿Listo para empezar?</h2> {/* text-3xl font-bold mb-6 */}
+               <h2 className={`h2 fw-bold mb-4 text-font text-fubol animate-fade-in-up ${contactInView ? 'is-in-view' : ''}`}>¿Listo para empezar?</h2>
+
               <p className="lead mb-4 color-text1">Déjanos tus datos y agendemos tu demo gratuita.</p> {/* text-gray-700 mb-8 */}
              <form className="mx-auto" onSubmit={handleSubmit} style={{ maxWidth: '600px' }}>
-  <div className="mb-3">
+               <div className={`mb-3 animate-fade-in-up ${contactInView ? 'is-in-view delay-200' : ''}`}>
+
     <input
       type="text"
       name="nombre"
@@ -470,7 +526,7 @@ const App = () => {
       autoComplete="off"
     />
   </div>
-  <div className="mb-3">
+                  <div className={`mb-3 animate-fade-in-up ${contactInView ? 'is-in-view delay-300' : ''}`}>
     <input
       type="email"
       name="email"
@@ -492,7 +548,8 @@ const App = () => {
   <button
     type="submit"
     disabled={state.submitting}
-    className="btn btn-success btn-lg btn-custom-cta"
+     className={`btn btn-success btn-lg btn-custom-cta animate-fade-in-up ${contactInView ? 'is-in-view delay-600' : ''}`}
+
   >
     {state.submitting ? "Enviando..." : "Enviar solicitud"}
   </button>
