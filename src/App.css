@@ -53,8 +53,14 @@ background-clip: text;
   border: #000000 1px  solid;
 }
 footer{
+   font-family: 'Days one', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 10px;
   background: #152039;
- 
+
 }
 
 

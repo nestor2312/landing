@@ -758,9 +758,9 @@ const App = () => {
         {/* Footer */}
         <footer className=" text-white py-6">
           <div className="container mx-auto px-6 text-center my-auto">
-            <p className=" text-white py-6">
+           
               © {new Date().getFullYear()} Fubol. Todos los derechos reservados.
-            </p>
+          
           </div>
         </footer>
       </div>
