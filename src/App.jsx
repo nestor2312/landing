@@ -261,7 +261,7 @@ const App = () => {
               <img
                 src={Logo}
                 alt="Fubol Logo"
-                style={{ width: "160px" }}
+                style={{ width: "120px" }}
                 className="img-fluid"
               />
             </a>
@@ -339,7 +339,7 @@ const App = () => {
               {/* Columna de Texto y CTA */}
               <div className="col-md-6 order-1 order-md-2 ps-md-5 mt-4">
                 <h1 className="display-4 fw-bold mb-3 text-font text-left">
-                  <strong className="text-fubol">Fúbol </strong>El Control Total
+                  <strong className="text-fubol">Fubol </strong>El Control Total
                   de Tu Torneo.
                 </h1>
                 <p className="color-text1 lead mb-4 text-left">
@@ -366,7 +366,7 @@ const App = () => {
         </section>
 
         {/* Features Section */}
-        <section ref={featuresRef} className="py-3 fondo1">
+        <section ref={featuresRef} className="py-3 margin fondo1">
           {" "}
           {/* py-12 md:py-20 */}
           <div className="container my-3 px-4">

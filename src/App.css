@@ -54,7 +54,7 @@ background-clip: text;
 }
 footer{
   background: #152039;
-  padding: 1px;
+ 
 }
 
 
@@ -345,6 +345,10 @@ input::placeholder{
 }
 
   @media only screen and (max-width: 576px) {
+    .margin{
+      margin-top: -300px!important;
+     
+    }
   .card-price{
           width: 90%;
         }
@@ -363,7 +367,7 @@ input::placeholder{
   left: 0;
 
   right: 0;
-  margin: 90px auto;
+  margin: 25px auto;
   transition: transform 0.4s ease, opacity 0.4s ease;
   cursor: pointer;
   /* Para centrar el contenido (la imagen) dentro del label si el label es más grande */
