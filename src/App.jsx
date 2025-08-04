@@ -475,7 +475,7 @@ const App = () => {
         <section ref={pricingRef} id="pricing" className="py-5">
           {" "}
           {/* Añadido bg-white para consistencia */}
-          <div className="container my-5 px-4 text-center">
+          <div className="container my-6 px-2 text-center">
             <h2
               className={`h2 fw-bold mb-5 text-font text-fubol animate-fade-in-up ${
                 pricingInView ? "is-in-view" : ""
@@ -484,68 +484,45 @@ const App = () => {
               Planes y Precios
             </h2>
 
-            <div
-              className={`d-flex justify-content-center mb-4 animate-fade-in-up ${
-                pricingInView ? "is-in-view delay-100" : ""
-              }`}
-            >
-              <div
-                className="btn-group me-3"
-                role="group"
-                aria-label="Selector de Moneda"
-              >
-                <button
-                  type="button"
-                  className={`btn btn-outline-success ${
-                    selectedCurrency === "COP" ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedCurrency("COP")}
-                >
-                  COP
-                </button>
-                <button
-                  type="button"
-                  className={`btn btn-outline-success ${
-                    selectedCurrency === "USD" ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedCurrency("USD")}
-                >
-                  USD
-                </button>
-                <button
-                  type="button"
-                  className={`btn btn-outline-success ${
-                    selectedCurrency === "EUR" ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedCurrency("EUR")}
-                >
-                  EUR
-                </button>
-              </div>
-              {/* Solo mostrar el switch de facturación anual si el plan actual es el 'multi-torneo' */}
-              {pricingPlans.some(
-                (plan) =>
-                  plan.id === "multi-torneo" &&
-                  (plan.prices[selectedCurrency].monthly ||
-                    plan.prices[selectedCurrency].annual)
-              ) && (
-                <div className="custom-switch-container d-flex align-items-center">
-                  <input
-                    className="custom-switch"
-                    type="checkbox"
-                    id="annualBillingSwitch"
-                    checked={isAnnualBilling}
-                    onChange={() => setIsAnnualBilling(!isAnnualBilling)}
-                  />
-                  <label
-                    className="form-check-label ms-2"
-                    htmlFor="annualBillingSwitch"
-                  >
-                    Ver Facturación Anual (¡Ahorra!)
-                  </label>
-                </div>
-              )}
-            </div>
+            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 mb-4">
+  <div className="btn-group" role="group" aria-label="Selector de Moneda">
+    <button 
+      type="button" 
+      className={`btn btn-outline-success ${selectedCurrency === 'COP' ? 'active' : ''}`} 
+      onClick={() => setSelectedCurrency('COP')}
+    >
+      COP
+    </button>
+    <button 
+      type="button" 
+      className={`btn btn-outline-success ${selectedCurrency === 'USD' ? 'active' : ''}`} 
+      onClick={() => setSelectedCurrency('USD')}
+    >
+      USD
+    </button>
+    <button 
+      type="button" 
+      className={`btn btn-outline-success ${selectedCurrency === 'EUR' ? 'active' : ''}`} 
+      onClick={() => setSelectedCurrency('EUR')}
+    >
+      EUR
+    </button>
+  </div>
+
+  <div className="custom-switch-container d-flex align-items-center">
+    <input 
+      type="checkbox"
+      id="annualBillingSwitch"
+      checked={isAnnualBilling}
+      onChange={() => setIsAnnualBilling(!isAnnualBilling)}
+      className="custom-switch"
+    />
+    <label className="ms-2" htmlFor="annualBillingSwitch">
+      Ver Facturación Anual (¡Ahorra!)
+    </label>
+  </div>
+</div>
+ 
 
             <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
               {pricingPlans.map((plan) => (

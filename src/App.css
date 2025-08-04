@@ -89,8 +89,13 @@ footer{
             transform: translateY(-5px);
         }
         .pricing-card-highlight {
-            border-color: #00A878; /* Color de acento de Fúbol */
-            box-shadow: 0 8px 12px rgba(0, 168, 120, 0.2);
+  border: 1px solid transparent;
+background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(180deg, #00bf63cc, #09537ecc) border-box;
+box-shadow: 0 6px 16px rgba(0, 168, 120, 0.4);
+
+
+
         }
         .pricing-list-item {
             display: flex;
@@ -106,7 +111,7 @@ footer{
              
 
       font-family: 'Days One', sans-serif;
-     background: linear-gradient(180deg, rgba(0, 191, 99, 0.80) 0%, #09537ecc 100%);
+     background: linear-gradient(180deg, #00bf63cc 0%, #09537ecc 100%);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -347,7 +352,7 @@ input::placeholder{
         .carousel-slide {
   position: absolute;
   width: 85%; /* Ajusta este ancho según cómo quieras que se vean las miniaturas */
-  height: 60%; /* El contenedor del slide ocupa todo el alto disponible */
+  height: 40%; /* El contenedor del slide ocupa todo el alto disponible */
   left: 0;
 
   right: 0;
