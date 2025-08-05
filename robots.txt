@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://landing-pi-three-57.vercel.app/sitemap.xml
