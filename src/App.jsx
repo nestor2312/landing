@@ -729,7 +729,7 @@ const App = () => {
                   type="text"
                   name="institucion"
                   className="form-control form-control-lg rounded-pill"
-                  placeholder="Institución o liga"
+                  placeholder="Tipo de torneo"
                 />
               </div>
               <button
