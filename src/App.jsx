@@ -739,7 +739,7 @@ const App = () => {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className={`btn btn-success btn-lg btn-custom-cta animate-fade-in-up ${
+                className={`btn btn-success btn-lg mt-2 btn-custom-cta animate-fade-in-up ${
                   contactInView ? "is-in-view delay-600" : ""
                 }`}
               >
