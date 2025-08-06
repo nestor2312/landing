@@ -723,7 +723,11 @@ const App = () => {
                   autocomplete="off"
                 />
               </div>
-              <div className="mb-4">
+              <div
+                className={`mb-3 animate-fade-in-up ${
+                  contactInView ? "is-in-view delay-300" : ""
+                }`}
+              >
                 <input
                   autocomplete="off"
                   type="text"

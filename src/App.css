@@ -1,5 +1,5 @@
 #root {
-
+width: 100vw;
  
  
   text-align: center;
@@ -65,6 +65,7 @@ footer{
 
 
         .btn-custom-cta {
+          letter-spacing: 2px;
             padding: 1rem 2.5rem; /* px-10 py-4 */
             border-radius: 25px; /* rounded-full */
             font-weight: 800; /* font-extrabold */
