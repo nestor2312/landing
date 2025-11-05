@@ -90,7 +90,7 @@ footer{
             transition: transform 0.3s ease-in-out;
         }
         .card-price{
-          width: 80%;
+          width: 98%;
         }
         .pricing-card:hover {
             transform: translateY(-5px);
@@ -128,7 +128,7 @@ background-clip: text;
         }
 
           .text-prices{
-         font-weight: 700;
+         font-weight: 500;
      font-family: 'Roboto Condensed', sans-serif;
      background: linear-gradient(180deg, rgba(0, 191, 99, 0.80) 0%, #09537ecc 100%);
 background-clip: text;

@@ -8,7 +8,7 @@ import Img1 from "./assets/IMG1.png";
 import Img2 from "./assets/Img2.png";
 import Img3 from "./assets/Img3.png";
 import Img4 from "./assets/img4.png";
-import Logo from "./assets/Frame 40.svg";
+import Logo from "./assets/Logo.svg";
 import list_items from "./assets/Soccer.png";
 const App = () => {
   const [state, handleSubmit] = useForm("mdkzrlop"); // ← pon tu ID de Formspree aquí
@@ -18,68 +18,155 @@ const App = () => {
   const [isAnnualBilling, setIsAnnualBilling] = useState(false);
 
   // Datos de los planes de precios
-  const pricingPlans = [
-    {
-      id: "multi-torneo", // Nuevo ID
-      name: "Plan Multi Torneo", // Nuevo nombre
-      description: "Ideal para múltiples torneos, categorías y subcategorías", // Nueva descripción
-      features: [
-        "Torneos, categorías y subcategorías ilimitadas",
-        "Equipos ilimitados",
-        "Jugadores ilimitados",
-        "Clasificación automática",
-        "Partidos ilimitados",
-        "Fase final desde cuartos de final",
-        "Estadísticas (goles, asistencias, tarjetas)",
-        "Personalización de diseño opcional",
-        "Soporte básico",
-        "Hosting + dominio + SSL",
-        "Mantenimiento básico",
-      ],
-      additionalServices: {
-        design: "Diseño Personalizado",
-        forms: "Codificar Formularios",
-      },
-      prices: {
-        COP: {
-          monthly: 180000,
-          annual: 1800000,
-          design: 200000,
-          forms: 100000,
-        },
-        USD: { monthly: 35, annual: 350, design: 50, forms: 45 },
-        EUR: { monthly: 30, annual: 300, design: 45, forms: 22 },
-      },
-      note: null,
+const pricingPlans = [
+  {
+    id: "plan-multi-torneo",
+    name: "Plan Multi Torneo",
+    description:
+      "Ideal para organizar múltiples torneos.",
+    features: [
+      "Torneos ilimitados",
+      "Categorías y subcategorías ilimitadas",
+      "Equipos y jugadores ilimitados",
+      "Clasificación automática",
+      "Partidos y resultados ilimitados",
+      "Fase final desde cuartos de final",
+      "Estadísticas completas (goles, asistencias, tarjetas)",
+      "Panel administrativo completo",
+      "Personalización de diseño opcional",
+      "Soporte prioritario",
+      "Hosting + dominio + SSL incluidos",
+      "Mantenimiento básico",
+      "Tiempo de demo: 15 días",
+    ],
+    additionalServices: {
+      design: "Diseño personalizado del sitio",
+      forms: "Formularios a Tu Medida",
     },
-    {
-      id: "unico-torneo", // Nuevo ID
-      name: "Plan Único Torneo", // Nuevo nombre
-      description: "Para un solo torneo", // Nueva descripción
-      features: [
-        "Un torneo",
-        "Equipos ilimitados",
-        "Jugadores ilimitados",
-        "Clasificación automática",
-        "Partidos ilimitados",
-        "Fase final desde cuartos de final",
-        "Estadísticas (goles, asistencias, tarjetas)",
-        "Soporte básico",
-        "Hosting + dominio + SSL",
-        "Mantenimiento básico",
-      ],
-      additionalServices: {
-        design: "Diseño Personalizado",
-        forms: "Codificar Formularios",
+    prices: {
+      COP: {
+          monthly: 160000,
+        // monthly: 170000,
+        annual: 1600000,
+        design:70000,
+        forms: 120000,
       },
-      prices: {
-        COP: { pagoUnico: 250000, design: 80000, forms: 100000 },
-        USD: { pagoUnico: 65, design: 40, forms: 35 }, // Estimaciones basadas en COP
-        EUR: { pagoUnico: 55, design: 35, forms: 30 }, // Estimaciones basadas en COP
-      },
-      note: ` Para un nuevo torneo, se requiere una nueva contraracion de este plan `,
+      USD: { monthly: 35, annual: 350, design: 50, forms: 45 },
+      EUR: { monthly: 30, annual: 300, design: 45, forms: 22 },
     },
-  ];
+    note: "El plan más completo para instituciones con múltiples torneos.",
+  },
+
+  {
+    id: "plan-intermedio",
+    name: "Plan Intermedio",
+    description:
+      "Ideal para ligas o torneos medianos que gestionan un solo torneo, pero con varias categorías.",
+    features: [
+      "1 torneo",
+      "2 categorías y 2 subcategorías",
+      "Equipos y jugadores ilimitados",
+      "Clasificación automática",
+      "Partidos y resultados ilimitados",
+      "Fase final desde cuartos de final",
+      "Estadísticas (goles, asistencias, tarjetas)",
+      "Panel de administración estándar",
+      "Personalización de diseño opcional",
+      "Soporte básico",
+      "Hosting + dominio + SSL incluidos",
+      "Mantenimiento básico",
+     
+    ],
+    additionalServices: {
+      design: "Diseño personalizado del sitio",
+      forms: "Formularios a Tu Medida",
+    },
+    prices: {
+      COP: {
+        monthly: 130000,
+        // monthly: 150000,
+        annual: 1300000,
+        design:70000,
+        forms: 120000,
+      },
+      USD: { monthly: 30, annual: 300, design: 45, forms: 40 },
+      EUR: { monthly: 27, annual: 270, design: 40, forms: 35 },
+    },
+    note: "Perfecto para torneos con más de una categoría.",
+  },
+
+  // {
+  //   id: "plan-estandar",
+  //   name: "Plan Estándar",
+  //   description:
+  //     "Ideal para torneos amateur o ligas pequeñas con dos categorías.",
+  //   features: [
+  //     "1 torneo",
+  //     "2 categoría y 1 subcategorías",
+  //     "Equipos ilimitados",
+  //     "Jugadores ilimitados",
+  //     "Clasificación automática",
+  //     "Partidos y resultados ilimitados",
+  //     "Fase final desde cuartos de final",
+  //     "Estadísticas (goles, asistencias, tarjetas)",
+  //     "Soporte básico",
+  //     "Hosting + dominio + SSL incluidos",
+  //     "Mantenimiento básico",
+     
+  //   ],
+  //   additionalServices: {
+  //     design: "Diseño personalizado",
+  //     forms: "Formularios a Tu Medida",
+  //   },
+  //   prices: {
+  //     COP: {
+  //       monthly: 120000,
+  //       annual: 1200000,
+  //       design:70000,
+  //       forms: 120000,
+  //     },
+  //     USD: { monthly: 25, annual: 250, design: 40, forms: 35 },
+  //     EUR: { monthly: 22, annual: 220, design: 38, forms: 32 },
+  //   },
+  //   note: "La opción más equilibrada en funcionalidad y costo.",
+  // },
+
+  {
+    id: "plan-unico",
+    name: "Plan Único Torneo",
+    description:
+      "Ideal para torneos de barrio, eventos deportivos o pequeños campeonatos.",
+    features: [
+      "1 torneo activo",
+      "Hasta 20 equipos",
+      "Jugadores ilimitados",
+      "Clasificación automática",
+      "Partidos y resultados ilimitados",
+      "Fase final desde cuartos de final",
+      "Estadísticas básicas (goles, tarjetas)",
+      "Soporte básico",
+      "Hosting + dominio + SSL incluidos",
+      "Mantenimiento básico",
+    
+    ],
+    additionalServices: {
+      design: "Diseño personalizado",
+      forms: "Formularios a Tu Medida",
+    },
+    prices: {
+      COP: {
+        monthly: 100000,
+        annual: 1000000,
+        design: 70000,
+        forms: 90000,
+      },
+      USD: { monthly: 20, annual: 200, design: 35, forms: 30 },
+      EUR: { monthly: 18, annual: 180, design: 32, forms: 27 },
+    },
+    note: "Ideal para quienes buscan un sistema simple y funcional.",
+  },
+];
+
 
   // Función para formatear el precio según la moneda seleccionada
   const formatPrice = (amount, currency) => {
@@ -249,6 +336,8 @@ const App = () => {
       if (contactRef.current) observer.unobserve(contactRef.current);
     };
   }, []);
+
+  
 
   return (
     <>
@@ -458,12 +547,12 @@ const App = () => {
                 >
                   {/* Aquí iría un <img src="/icons/form.svg" alt="Icono de Formulario" className="w-16 h-16 mb-4" /> */}
                   <h3 className="h5 fw-semibold mb-2 text-font">
-                    Campos y Formularios a Tu Medida
+                   Formularios a Tu Medida
                   </h3>
                   <p className="text-muted color-text2">
-                    Crea formularios de inscripción con campos personalizados
-                    para capturar todos los datos relevantes de jugadores y
-                    equipos.
+                   Personaliza tus formularios de inscripción según las necesidades
+                    de tu torneo. Para añadir, modificar o eliminar campos para
+                     capturar exactamente la información que necesites de jugadores y equipos.
                   </p>
                 </div>
               </div>
@@ -524,7 +613,7 @@ const App = () => {
 </div>
  
 
-            <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+            <div className="row row-cols-1 row-cols-md-3 g-0 justify-content-center">
               {pricingPlans.map((plan) => (
                 <div
                   className="col d-flex justify-content-center"
