@@ -37,7 +37,6 @@ const pricingPlans = [
       "Soporte prioritario",
       "Hosting + dominio + SSL incluidos",
       "Mantenimiento básico",
-      "Tiempo de demo: 15 días",
     ],
     additionalServices: {
       design: "Diseño personalizado del sitio",
@@ -775,9 +774,18 @@ const pricingPlans = [
             >
               ¿Listo para empezar?
             </h2>
-            <p className="lead mb-4 color-text1">
-              Déjanos tus datos y agendemos tu demo gratuita.
-            </p>{" "}
+           <p className="lead mb-4 color-text1">
+  Déjanos tus datos y agenda tu{" "}
+  <strong className="fw-bold">
+    demo gratuita de 15 días con acceso al plan Premium
+  </strong>
+  .<br />
+  <span className="d-block mt-2">
+    Descubre cómo <strong className="fw-bold">Fubol</strong> puede ayudarte a organizar y administrar
+    tus torneos de forma <strong className="fw-bold">fácil</strong>, <strong className="fw-bold">rápida</strong> y{" "}
+    <strong className="fw-bold">profesional</strong>.
+  </span>
+</p>
             {/* text-gray-700 mb-8 */}
             <form
               className="mx-auto"
