@@ -356,12 +356,17 @@ input::placeholder{
 }
 
   @media only screen and (max-width: 576px) {
+
+.font-prices{
+   font-size: 30px;
+}
+
     .margin{
       margin-top: -300px!important;
      
     }
   .card-price{
-          width: 90%;
+          width: 94%;
         }
         .pricing-card {
           
