@@ -777,7 +777,7 @@ const pricingPlans = [
            <p className="lead mb-4 color-text1">
   Déjanos tus datos y agenda tu{" "}
   <strong className="fw-bold">
-    demo gratuita de 15 días con acceso al plan Premium
+    demo gratuita de 15 días con acceso al plan Multi Torneo
   </strong>
   .<br />
   <span className="d-block fw-ligth mt-2">
