@@ -633,7 +633,7 @@ const pricingPlans = [
                       {/* Lógica condicional para mostrar precios mensuales/anuales o pago único */}
                       {plan.prices[selectedCurrency].monthly !== undefined ||
                       plan.prices[selectedCurrency].annual !== undefined ? (
-                        <p className="display-5 fw-bold mb-1 text-fubol">
+                        <p className="font-prices fw-bold mb-1 text-fubol">
                           {formatPrice(
                             isAnnualBilling
                               ? plan.prices[selectedCurrency].annual
@@ -645,7 +645,7 @@ const pricingPlans = [
                           </span>
                         </p>
                       ) : (
-                        <p className="display-5 fw-bold mb-1 text-fubol">
+                        <p className="font-prices fw-bold mb-1 text-fubol">
                           {formatPrice(
                             plan.prices[selectedCurrency].pagoUnico,
                             selectedCurrency
@@ -780,7 +780,7 @@ const pricingPlans = [
     demo gratuita de 15 días con acceso al plan Premium
   </strong>
   .<br />
-  <span className="d-block mt-2">
+  <span className="d-block fw-ligth mt-2">
     Descubre cómo <strong className="fw-bold">Fubol</strong> puede ayudarte a organizar y administrar
     tus torneos de forma <strong className="fw-bold">fácil</strong>, <strong className="fw-bold">rápida</strong> y{" "}
     <strong className="fw-bold">profesional</strong>.
