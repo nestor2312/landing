@@ -613,10 +613,10 @@ const pricingPlans = [
 </div>
  
 
-            <div className="row row-cols-1 row-cols-md-3 g-0 justify-content-center">
+            <div className="row row-cols-1 row-cols-md-3  g-0 justify-content-center">
               {pricingPlans.map((plan) => (
                 <div
-                  className="col d-flex justify-content-center"
+                  className="col d-flex justify-content-center mt-2 mb-3"
                   key={plan.id}
                 >
                   {/* Resaltar el Plan Multi Torneo */}
