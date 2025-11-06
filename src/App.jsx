@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { useForm } from "@formspree/react";
+import WhatsAppButton from "./WhatsAppButton";
 // Si quieres dos versiones diferentes de Img1, deberías importar dos archivos:
 // import Img1Thumbnail from "../assets/Img1_thumbnail.png";
 // import Img1FullSize from "../assets/Img1_full.png";
@@ -864,6 +865,7 @@ const pricingPlans = [
           
           </div>
         </footer>
+          <WhatsAppButton />
       </div>
     </>
   );
