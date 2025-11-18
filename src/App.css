@@ -94,7 +94,7 @@ footer{
             transition: transform 0.3s ease-in-out;
         }
         .card-price{
-          width: 98%;
+          width: 80%;
         }
         .pricing-card:hover {
             transform: translateY(-5px);

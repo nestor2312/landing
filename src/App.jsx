@@ -165,9 +165,33 @@ const pricingPlans = [
     },
     note: "Ideal para quienes buscan un sistema simple y funcional.",
   },
-];
+   {
+  id: "plan-relampago",
+  name: "Plan Torneo Relámpago",
+  description: "Ideal para torneos rápidos (4 a 6 días) sin dominio ni hosting.",
+  features: [
+    "1 torneo",
+    "Equipos ilimitados",
+    "Jugadores ilimitados",
+    "Partidos ilimitados",
+    "Clasificación automática",
+    "Fase final desde cuartos de final",
+    "Estadísticas completas (goles, asistencias, tarjetas)",
+    "Soporte básico",
+    "Incluye hosting temporal (demo)",
+    "No requiere dominio",
+    "Mantenimiento básico"
+  ],
+ additionalServices: {},
 
-
+  prices: {
+    COP: { pagoUnico: 50000},
+    USD: { pagoUnico: 15 },
+    EUR: { pagoUnico: 13 }
+  },
+  note: "renovar para otro torneo",
+}
+]
   // Función para formatear el precio según la moneda seleccionada
   const formatPrice = (amount, currency) => {
     if (currency === "COP") {
@@ -613,7 +637,7 @@ const pricingPlans = [
 </div>
  
 
-            <div className="row row-cols-1 row-cols-md-3  g-0 justify-content-center">
+            <div className="row row-cols-1 row-cols-md-2  g-0 justify-content-center">
               {pricingPlans.map((plan) => (
                 <div
                   className="col d-flex justify-content-center mt-2 mb-3"
@@ -709,11 +733,10 @@ const pricingPlans = [
                             >
                               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
                             </svg>
-                            {plan.additionalServices.design}:{" "}
-                            {formatPrice(
-                              plan.prices[selectedCurrency].design,
-                              selectedCurrency
-                            )}
+                            {plan.additionalServices.design ?? "No aplica"}{" "}
+      {plan.prices[selectedCurrency].design
+        ? formatPrice(plan.prices[selectedCurrency].design, selectedCurrency)
+        : "para este plan"}
                           </li>
                           <li className="pricing-list-item">
                             <svg
@@ -726,11 +749,10 @@ const pricingPlans = [
                             >
                               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
                             </svg>
-                            {plan.additionalServices.forms}:{" "}
-                            {formatPrice(
-                              plan.prices[selectedCurrency].forms,
-                              selectedCurrency
-                            )}
+                            {plan.additionalServices.forms ?? "No aplica"} {" "}
+      {plan.prices[selectedCurrency].forms
+        ? formatPrice(plan.prices[selectedCurrency].forms, selectedCurrency)
+        : "para este plan"}
                           </li>
                         </ul>
                       </div>
@@ -778,7 +800,7 @@ const pricingPlans = [
            <p className="lead mb-4 color-text1">
   Déjanos tus datos y agenda tu{" "}
   <strong className="fw-bold">
-    demo gratuita de 15 días con acceso al plan Multi Torneo
+    demo gratuita de 14 días con acceso al plan Multi Torneo
   </strong>
   .<br />
   <span className="d-block fw-ligth mt-2">
