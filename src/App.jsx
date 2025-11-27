@@ -312,6 +312,22 @@ const pricingPlans = [
   const [pricingInView, setPricingInView] = useState(false);
   const [contactInView, setContactInView] = useState(false);
 
+useEffect(() => {
+  const interval = setInterval(() => {
+    // Obtener el índice actual
+    const currentIndex = slides.findIndex(s => s.id === checkedItem);
+
+    // Obtener el siguiente índice
+    const nextIndex = (currentIndex + 1) % slides.length;
+
+    // Cambiar al siguiente slide
+    setCheckedItem(slides[nextIndex].id);
+  }, 3000); // Cambia cada 3 segundos
+
+  return () => clearInterval(interval);
+}, [checkedItem, slides]);
+
+
   useEffect(() => {
     // Configuración del Intersection Observer
     const observerOptions = {
