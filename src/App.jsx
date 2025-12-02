@@ -322,7 +322,7 @@ useEffect(() => {
 
     // Cambiar al siguiente slide
     setCheckedItem(slides[nextIndex].id);
-  }, 3000); // Cambia cada 3 segundos
+  }, 1200); // Cambia cada 3 segundos
 
   return () => clearInterval(interval);
 }, [checkedItem, slides]);
