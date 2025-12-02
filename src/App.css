@@ -251,6 +251,12 @@ input::placeholder{
   transform: translateX(24px); /* mueve la bolita a la derecha */
 }
 
+.color-text3 {
+    font-size: 25px;
+    color: #152039;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 
 
 

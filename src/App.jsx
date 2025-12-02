@@ -813,7 +813,7 @@ useEffect(() => {
             >
               ¿Listo para empezar?
             </h2>
-           <p className="lead mb-4 color-text1">
+           <p className="lead mb-4 color-text3">
   Déjanos tus datos y agenda tu{" "}
   <strong className="fw-bold">
     demo gratuita de 14 días con acceso al plan Multi Torneo
