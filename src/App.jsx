@@ -73,7 +73,7 @@ const pricingPlans = [
       "Panel de administración estándar",
       "Personalización de diseño opcional",
       "Soporte básico",
-      "Hosting + dominio + SSL incluidos",
+      "Hosting + subdominio + SSL incluidos",
       "Mantenimiento básico",
      
     ],
@@ -145,7 +145,7 @@ const pricingPlans = [
       "Fase final desde cuartos de final",
       "Estadísticas básicas (goles, tarjetas)",
       "Soporte básico",
-      "Hosting + dominio + SSL incluidos",
+      "Hosting + subdominio + SSL incluidos",
       "Mantenimiento básico",
     
     ],
@@ -168,7 +168,7 @@ const pricingPlans = [
    {
   id: "plan-relampago",
   name: "Plan Torneo Relámpago",
-  description: "Ideal para torneos rápidos (4 a 6 días) sin dominio ni hosting.",
+  description: "Ideal para torneos rápidos (4 a 6 días) ",
   features: [
     "1 torneo",
     "Equipos ilimitados",
@@ -468,7 +468,7 @@ useEffect(() => {
               {/* Columna de Texto y CTA */}
               <div className="col-md-6 order-1 order-md-2 ps-md-5 mt-4">
                 <h1 className="display-4 fw-bold mb-3 text-font text-left">
-                  <strong className="text-fubol">Fubol </strong>El Control Total
+                  <strong className="text-fubol">Fubol zona </strong>El Control Total
                   de Tu Torneo.
                 </h1>
                 <p className="color-text1 lead mb-4 text-left">
@@ -899,7 +899,7 @@ useEffect(() => {
         <footer className=" text-white py-6">
           <div className="container mx-auto px-6 text-center my-auto">
            
-              © {new Date().getFullYear()} Fubol. Todos los derechos reservados.
+              © {new Date().getFullYear()} Fubol zona. Todos los derechos reservados.
           
           </div>
         </footer>
