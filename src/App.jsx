@@ -9,7 +9,8 @@ import Img1 from "./assets/IMG1.png";
 import Img2 from "./assets/Img2.png";
 import Img3 from "./assets/Img3.png";
 import Img4 from "./assets/img4.png";
-import Logo from "./assets/Logo.svg";
+
+
 import list_items from "./assets/Soccer.png";
 const App = () => {
   const [state, handleSubmit] = useForm("mdkzrlop"); // ← pon tu ID de Formspree aquí
@@ -388,7 +389,7 @@ useEffect(() => {
             <a className="navbar-brand" href="#">
               {/* Usando una URL de placeholder para el logo */}
               <img
-                src={Logo}
+                src="/Frame_49.png"
                 alt="Fubol Logo"
                 style={{ width: "120px" }}
                 className="img-fluid"
