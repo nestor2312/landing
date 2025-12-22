@@ -144,7 +144,7 @@ const pricingPlans = [
       "Clasificación automática",
       "Partidos y resultados ilimitados",
       "Fase final desde cuartos de final",
-      "Estadísticas básicas (goles, tarjetas)",
+      "Estadísticas básicas (goles, asistenicas, tarjetas)",
       "Soporte básico",
       "Hosting + subdominio + SSL incluidos",
       "Mantenimiento básico",
@@ -169,7 +169,7 @@ const pricingPlans = [
    {
   id: "plan-relampago",
   name: "Plan Torneo Relámpago",
-  description: "Ideal para torneos rápidos (4 a 6 días) ",
+  description: "Ideal para torneos rápidos (4 a 7 días) ",
   features: [
     "1 torneo",
     "Equipos ilimitados",
