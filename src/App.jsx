@@ -162,7 +162,7 @@ const pricingPlans = [
         forms: 90000,
       },
       USD: { monthly: 30, annual: 300, design: 20, forms: 35 },
-      EUR: { monthly: 30, annual: 300, design: 17, forms: 27 },
+      EUR: { monthly: 25, annual: 250, design: 17, forms: 27 },
     },
     note: "Ideal para quienes buscan un sistema simple y funcional.",
   },
