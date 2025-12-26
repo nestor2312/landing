@@ -389,7 +389,7 @@ useEffect(() => {
             <a className="navbar-brand" href="#">
               {/* Usando una URL de placeholder para el logo */}
               <img
-                src="/Frame_49.png"
+                src="/Logo.png"
                 alt="Fubol Logo"
                 style={{ width: "120px" }}
                 className="img-fluid"
