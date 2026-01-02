@@ -179,8 +179,7 @@ const pricingPlans = [
     "Fase final desde cuartos de final",
     "Estadísticas completas (goles, asistencias, tarjetas)",
     "Soporte básico",
-    "Incluye hosting temporal (demo)",
-    "No requiere dominio",
+    "Hosting + subdominio + SSL incluidos",
     "Mantenimiento básico"
   ],
  additionalServices: {},
@@ -750,10 +749,10 @@ useEffect(() => {
                             >
                               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
                             </svg>
-                            {plan.additionalServices.design ?? "No aplica"}{" "}
+                            {plan.additionalServices.design ?? "Categoría extra: $ 20.000"}{" "}
       {plan.prices[selectedCurrency].design
         ? formatPrice(plan.prices[selectedCurrency].design, selectedCurrency)
-        : "para este plan"}
+        : " "}
                           </li>
                           <li className="pricing-list-item">
                             <svg
@@ -766,7 +765,7 @@ useEffect(() => {
                             >
                               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
                             </svg>
-                            {plan.additionalServices.forms ?? "No aplica"} {" "}
+                            {plan.additionalServices.forms ?? "No aplica diseño personalizado"} {" "}
       {plan.prices[selectedCurrency].forms
         ? formatPrice(plan.prices[selectedCurrency].forms, selectedCurrency)
         : "para este plan"}
@@ -775,7 +774,7 @@ useEffect(() => {
                       </div>
                       {plan.note && (
                         <p className="text-danger small mt-1 mb-1">
-                          <strong>*Importante:</strong>
+                          <strong>*Importante: </strong>
                           {plan.note}
                         </p>
                       )}
